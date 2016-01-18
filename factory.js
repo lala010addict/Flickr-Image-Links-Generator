@@ -43,7 +43,7 @@ myFlickr.factory('PhotoSet', ['$http', function($http) {
     return $http.get(URL, {
       cache: true
     }).success(function(data) {
-      return data.photoset.photo
+      return data.photoset
 
       // $scope.set = data.photosets.photoset
     });

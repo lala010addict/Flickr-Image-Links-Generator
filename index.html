@@ -16,7 +16,14 @@
 <body>
   <div ng-controller="menu">
     <div class="gallery">
-      <a ng-repeat="x in photos" class="swipebox" ng-href="https://farm{{x.farm}}.static.flickr.com/{{x.server}}/{{x.id}}_{{x.secret}}_b.jpg"><img style="margin: 2px;" ng-src="https://farm{{x.farm}}.static.flickr.com/{{x.server}}/{{x.id}}_{{x.secret}}_z.jpg"></a>
+      <form ng-submit="getPhotos(text)">
+        Enter Set ID:
+        <input type="text" ng-model="text" name="text" />
+        <input type="submit" id="submit" value="Submit" />
+      </form>
+      <a ng-repeat="x in photos.photo">
+        <div> &lt;img src="https://farm{{x.farm}}.static.flickr.com/{{x.server}}/{{x.id}}_{{x.secret}}_b.jpg"&gt;</div>
+      </a>
     </div>
   </div>
   <script type="text/javascript" src="app.js"></script>
