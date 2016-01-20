@@ -19,10 +19,20 @@
       <form ng-submit="getPhotos(text)">
         Enter Flickr Set ID to Generate a List of IMG URLs:
         <input type="text" ng-model="text" name="text" />
+           <br>
+        <label for="singleSelect"> Select Image Size: </label>
+        <br>
+        <select name="singleSelect" ng-model="data.singleSelect">
+              <option value="_z">640 x 427</option>
+          <option value="_c">800 x 534</option>
+          <option value="_b">1024 x 683</option>
+          <option value="_o">Original</option>
+        </select>
+        <br>
         <input type="submit" id="submit" value="Submit" />
       </form>
       <a ng-repeat="x in photos.photo">
-        <div> &lt;img src="https://farm{{x.farm}}.static.flickr.com/{{x.server}}/{{x.id}}_{{x.secret}}_b.jpg"&gt;</div>
+        <div> &lt;img src="https://farm{{x.farm}}.static.flickr.com/{{x.server}}/{{x.id}}_{{x.secret}}{{data.singleSelect}}.jpg"&gt;</div>
       </a>
     </div>
   </div>
