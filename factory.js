@@ -8,7 +8,7 @@ myFlickr.factory('PhotoSet', ['$http', function($http) {
       "&api_key=" + api_key +
       "&photoset_id=" + setId +
       "&privacy_filter=1" +
-      "&per_page=100" +
+      // "&per_page=100" +
       "&format=json&nojsoncallback=1"
 
 

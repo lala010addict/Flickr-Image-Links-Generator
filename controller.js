@@ -7,13 +7,13 @@ myFlickr.controller('menu', ['$scope', "$http", 'PhotoSet', "$location", '$route
 
   $scope.photos = {};
 
-
   $scope.getPhotos = function(item) {
     console.log(item);
     PhotoSet.getPhotos(item)
       .success(function(data) {
-
+    console.log(data.photoset);
         $scope.photos = data.photoset
+      
 
       })
   }
